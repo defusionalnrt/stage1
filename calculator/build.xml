@@ -1,0 +1,29 @@
+<project name="Calculator" default="run" basedir=".">	
+	<path id="classpath.test">
+		<pathelement location="/lib/junit-4.13.2.jar" />
+		<pathelement location="test" />
+		<pathelement location="src" />
+	</path>
+	
+	<target name="clean" > 
+		<delete verbose="true">
+			<fileset dir="test" includes="**/*.class" />
+		</delete>
+	</target>
+	
+	<target name="compile" depends="clean">
+	  	<javac srcdir="src" destdir="test" 
+		 	verbose="true">
+			<classpath refid="classpath.test"/>
+	  	</javac>
+	</target>
+	
+	<target name="run" depends="compile">
+		<java classname="calculator">
+		<classpath>
+			<pathelement path="test"/>
+		</classpath>
+		</java>
+	</target>
+	
+</project>
