@@ -6,6 +6,10 @@
 		<pathelement location="src" />
 	</path>
 
+	<path id="compile.path">
+    	<pathelement location="lib/junit-4.13.2.jar" />
+  	</path>
+
 	<target name="clean" >
 		<delete verbose="false">
 			<fileset dir="test" includes="**/*.class" />
@@ -13,7 +17,7 @@
 	</target>
 
 	<target name="compile" depends="clean">
-	  	<javac srcdir="src" destdir="test" verbose="false">
+	  	<javac srcdir="src" destdir="test" classpathref="compile.path" verbose="false">
 			<classpath refid="classpath.test"/>
 	  	</javac>
 	</target>

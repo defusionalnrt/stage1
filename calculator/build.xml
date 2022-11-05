@@ -1,6 +1,6 @@
 <project name="Calculator" default="run" basedir=".">	
 	<path id="classpath.test">
-		<pathelement location="/lib/junit-4.13.2.jar" />
+		<pathelement location="lib" />
 		<pathelement location="test" />
 		<pathelement location="src" />
 	</path>
